@@ -14,7 +14,9 @@ Features:
 - Professional and clean layout for quotations and orders
 """,
     'author': "Ubaid Ur Rehman",
-    'website': "",
+    'website': "https://ubaid-dev.netlify.app/",
+    'price': 30.00,
+    'currency': 'USD',
     'category': 'Sales',
     'license': 'LGPL-3',
 
