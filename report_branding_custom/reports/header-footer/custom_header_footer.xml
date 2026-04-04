@@ -1,0 +1,110 @@
+<odoo>
+    <template id="custom_layout_standard"
+              inherit_id="web.external_layout_standard">
+
+        <!-- HEADER -->
+        <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
+
+            <t t-set="company_id" t-value="o.company_id or res_company"/>
+
+            <div class="header" style="width:100%;">
+
+                <table style="width:100%; margin-bottom:10px; border:white;">
+                    <tr>
+                        <td style="width:70%; vertical-align:top;">
+                            <h1 style="margin:0; color:#7b4775;">
+                                <strong><b t-esc="company_id.name"/></strong>
+                            </h1>
+
+                            <div style="font-size:16px; color:#30302f;">
+                                <span t-esc="company_id.partner_id.street or ''"/>
+                                <t t-if="company_id.partner_id.city">
+                                    , <span t-esc="company_id.partner_id.city"/>
+                                </t>
+                                <t t-if="company_id.partner_id.state_id">
+                                    , <span t-esc="company_id.partner_id.state_id.name"/>
+                                </t>
+                                <t t-if="company_id.partner_id.country_id">
+                                    , <span t-esc="company_id.partner_id.country_id.name"/>
+                                </t>
+                                <br/>
+                                <t t-if="company_id.phone">
+                                    <b>Phone:</b> <span t-esc="company_id.phone"/>
+                                </t>
+                                <t t-if="company_id.email">
+                                    || <b>Email:</b> <span t-esc="company_id.email"/>
+                                </t>
+                                <t t-if="company_id.vat">
+                                    || <b>Tax ID:</b> <span t-esc="company_id.vat"/>
+                                </t>
+                            </div>
+                        </td>
+
+                        <td style="width:30%; text-align:right; vertical-align:top;">
+                           <img t-if="o.company_id.logo"
+                                     t-att-src="image_data_uri(o.company_id.logo)"
+                                     style="max-width:250px; max-height:120px;"/>
+                        </td>
+                    </tr>
+                </table>
+
+                <div style="width:100%; border-bottom:3px solid #7b4775; margin-bottom:5px;"/>
+
+            </div>
+        </xpath>
+
+        <!-- FOOTER -->
+        <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
+
+            <t t-set="company_id" t-value="o.company_id or res_company"/>
+
+            <div class="footer">
+
+                <div style="border-top:3px solid #7b4775; margin-bottom:10px;"/>
+
+                <div style="width:100%; text-align:center; color:#30302f;">
+
+                    <div style="color:#7b4775; font-size:25px;">
+                        <strong><b t-esc="company_id.name"/></strong>
+                    </div>
+
+                    <div style="font-size:16px;">
+                        <span t-esc="company_id.partner_id.street or ''"/>
+
+                        <t t-if="company_id.partner_id.city">,
+                            <span t-esc="company_id.partner_id.city"/>
+                        </t>
+
+                        <t t-if="company_id.partner_id.state_id">,
+                            <span t-esc="company_id.partner_id.state_id.name"/>
+                        </t>
+
+                        <t t-if="company_id.partner_id.country_id">,
+                            <span t-esc="company_id.partner_id.country_id.name"/>
+                        </t>
+
+                        <br/>
+
+                        <t t-if="company_id.phone">
+                            <b>Phone:</b>
+                            <span t-esc="company_id.phone"/>
+                        </t>
+
+                        <t t-if="company_id.email">
+                            || <b>Email:</b>
+                            <span t-esc="company_id.email"/>
+                        </t>
+
+                        <t t-if="company_id.vat">
+                            || <b>Tax ID:</b>
+                            <span t-esc="company_id.vat"/>
+                        </t>
+                    </div>
+
+                </div>
+
+            </div>
+        </xpath>
+
+    </template>
+</odoo>

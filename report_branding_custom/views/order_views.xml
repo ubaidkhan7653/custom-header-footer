@@ -1,0 +1,100 @@
+<odoo>
+    <record id="sale_order_form_inherit_invoice_btn" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.invoice.button</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//button[@id='create_invoice']" position="attributes">
+                <attribute name="class">btn-warning</attribute>
+                <attribute name="icon">fa-paper-plane</attribute>
+            </xpath>
+
+            <xpath expr="//button[@id='send_by_email_primary']" position="attributes">
+                <attribute name="class">btn btn-success o_button_pay</attribute>
+                <attribute name="icon">fa-envelope</attribute>
+            </xpath>
+
+             <xpath expr="//button[@id='send_by_email']" position="attributes">
+                    <attribute name="icon">fa-envelope-open</attribute>
+                    <attribute name="class">btn btn-success o_button_pay</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_draft']" position="attributes">
+                <attribute name="icon">fa-undo</attribute>
+                <attribute name="class">btn btn-warning</attribute>
+            </xpath>
+
+                    <xpath expr="//button[@id='action_confirm']" position="attributes">
+            <attribute name="icon">fa-check-circle</attribute>
+            <attribute name="class">btn-warning</attribute>
+        </xpath>
+
+        <xpath expr="//button[@name='action_confirm'][not(@id)]" position="attributes">
+            <attribute name="icon">fa-check</attribute>
+            <attribute name="class">btn-warning</attribute>
+        </xpath>
+
+            <xpath expr="//button[@name='action_unlock']" position="attributes">
+            <attribute name="icon">fa-unlock</attribute>
+            <attribute name="class">btn-warning</attribute>
+        </xpath>
+
+        <xpath expr="//button[@name='action_lock']" position="attributes">
+            <attribute name="icon">fa-lock</attribute>
+            <attribute name="class">btn-secondary</attribute>
+        </xpath>
+
+                    <xpath expr="//button[@name='action_preview_sale_order']" position="attributes">
+            <attribute name="icon">fa-eye</attribute>
+            <attribute name="class">btn-info</attribute>
+        </xpath>
+                    <xpath expr="//button[@name='action_cancel']" position="attributes">
+            <attribute name="icon">fa-times</attribute>
+            <attribute name="class">btn-danger</attribute>
+        </xpath>
+
+        <xpath expr="//button[@name='action_draft']" position="attributes">
+            <attribute name="icon">fa-refresh</attribute>
+            <attribute name="class">btn-secondary</attribute>
+        </xpath>
+
+        </field>
+    </record>
+
+
+    <record id="view_invoice_form_custom" model="ir.ui.view">
+    <field name="name">account.move.form.inherit.custom</field>
+    <field name="model">account.move</field>
+    <field name="inherit_id" ref="account.view_move_form"/>
+    <field name="arch" type="xml">
+        <!-- Customize Pay Button -->
+        <xpath expr="//button[@name='action_register_payment']" position="attributes">
+            <attribute name="string">💰 Payment Register</attribute>
+            <attribute name="class">btn btn-success o_button_pay</attribute>
+        </xpath>
+
+        <!-- Customize Send Button -->
+        <xpath expr="//button[@name='action_invoice_sent']" position="attributes">
+             <attribute name="icon">fa-paper-plane</attribute>
+            <attribute name="class">btn btn-danger o_button_send</attribute>
+        </xpath>
+
+        <xpath expr="//button[@name='button_draft']" position="attributes">
+            <attribute name="icon">fa-undo</attribute>
+            <attribute name="class">btn btn-warning</attribute>
+        </xpath>
+
+        <xpath expr="//button[@name='preview_invoice']" position="attributes">
+            <attribute name="icon">fa-eye</attribute>
+            <attribute name="class">btn-info</attribute>
+        </xpath>
+
+        <xpath expr="//button[@name='action_reverse']" position="attributes">
+            <attribute name="icon">fa-sticky-note</attribute>
+            <attribute name="class">btn-secondary</attribute>
+        </xpath>
+    </field>
+</record>
+
+</odoo>

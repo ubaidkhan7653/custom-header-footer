@@ -1,0 +1,162 @@
+<odoo>
+    <template id="report_invoice_without_payment_custom" inherit_id="account.report_invoice_with_payments">
+            <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+
+                <t t-foreach="docs" t-as="o">
+                    <!-- TITLE -->
+
+                    <h2 style="text-align:center; color:#7b4775; margin-top:10%;">
+                        <i>
+                            <b>Invoice Without Payment Report</b>
+                        </i>
+                    </h2>
+
+                    <!-- CUSTOMER INFO -->
+
+                    <table style="width:100%; border:1px solid #cfcfcf; margin-bottom:10px;">
+                        <tr>
+                            <td style="padding:5px;">
+                                <b>Customer</b>
+                            </td>
+                            <td style="padding:5px;" t-esc="o.partner_id.name"/>
+                            <td style="padding:5px;">
+                                <b>Invoice Date</b>
+                            </td>
+                            <td style="padding:5px;" t-esc="o.invoice_date"/>
+                        </tr>
+
+                        <tr>
+                            <td style="padding:5px;">
+                                <b>Invoice Number</b>
+                            </td>
+                            <td style="padding:5px;" t-esc="o.name"/>
+                            <td style="padding:5px;">
+                                <b>Salesperson</b>
+                            </td>
+                            <td style="padding:5px;" t-esc="o.user_id.name"/>
+                        </tr>
+
+                        <tr>
+                            <td style="padding:5px;">
+                                <b>Due Date</b>
+                            </td>
+                            <td style="padding:5px;" t-esc="o.invoice_date_due"/>
+                            <td style="padding:5px;">
+                                <b>Sales Term</b>
+                            </td>
+                            <td style="padding:5px;" t-esc="o.team_id.name"/>
+                        </tr>
+                    </table>
+
+                    <!-- INVOICE LINES -->
+
+                    <table style="width:100%; border-collapse:collapse; border:1px solid #cfcfcf;">
+                        <thead style="background:#7b4775; color:white;">
+                            <tr>
+                                <th style="border:1px solid #cfcfcf;">
+                                    <b>Product</b>
+                                </th>
+                                <th style="border:1px solid #cfcfcf;">
+                                    <b>Account</b>
+                                </th>
+                                <th style="border:1px solid #cfcfcf;">
+                                    <b>Quantity</b>
+                                </th>
+                                <th style="border:1px solid #cfcfcf;">
+                                    <b>Unit Price</b>
+                                </th>
+                                <th style="border:1px solid #cfcfcf;">
+                                    <b>Taxes</b>
+                                </th>
+                                <th style="border:1px solid #cfcfcf;">
+                                    <b>Subtotal</b>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.invoice_line_ids" t-as="line">
+                                <tr>
+                                    <td style="border:1px solid #cfcfcf; padding:5px;" t-esc="line.product_id.name"/>
+                                    <td style="border:1px solid #cfcfcf; padding:5px;" t-esc="line.account_id.name"/>
+                                    <td style="border:1px solid #cfcfcf; padding:5px; text-align:center;"
+                                        t-esc="line.quantity"/>
+                                    <td style="border:1px solid #cfcfcf; padding:5px; text-align:center;"
+                                        t-esc="line.price_unit"/>
+                                    <td style="border:1px solid #cfcfcf; padding:5px; text-align:center;"
+                                        t-esc="', '.join([t.name for t in line.tax_ids])"/>
+                                    <td style="border:1px solid #cfcfcf; padding:5px; text-align:center;"
+                                        t-esc="line.price_subtotal"/>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <!-- TOTAL -->
+
+                    <table style="width:40%; margin-left:auto; margin-top:10px; border:1px solid #cfcfcf;">
+                        <tr>
+                            <td style="padding:5px;">
+                                <b>Untaxed Amount</b>
+                            </td>
+                            <td style="padding:5px; text-align:center;">
+                                <span t-field="o.amount_untaxed"
+                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;">
+                                <b>Tax Amount</b>
+                            </td>
+                            <td style="padding:5px; text-align:center;">
+                                <span t-field="o.amount_tax"
+                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px;">
+                                <b>Total</b>
+                            </td>
+                            <td style="padding:5px; text-align:center;">
+                                <span t-field="o.amount_total"
+                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <!-- TERMS -->
+
+                    <t t-if="o.narration">
+                        <h4>
+                            <i>
+                                <u>
+                                    <b>Terms and Conditions</b>
+                                </u>
+                            </i>
+                        </h4>
+                        <div t-esc="o.narration"/>
+                    </t>
+                    <div style="height:30px;"></div>
+
+                    <table style="width:100%; margin-top:100px; text-align:center; border:white;">
+                        <tr>
+                            <td style="width:50%; padding:30px;">
+                                <div style="border-top:3px solid #000; width:70%; margin:auto;"></div>
+                                <div style="margin-top:8px; font-weight:bold;">Manager Approval</div>
+                            </td>
+
+                            <td style="width:50%; padding:30px;">
+                                <div style="border-top:3px solid #000; width:70%; margin:auto;"></div>
+                                <div style="margin-top:8px; font-weight:bold;">CEO Approval</div>
+                            </td>
+                        </tr>
+                    </table>
+                </t>
+
+            </t>
+        </t>
+            </xpath>
+    </template>
+</odoo>
