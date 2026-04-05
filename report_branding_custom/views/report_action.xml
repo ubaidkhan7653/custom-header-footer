@@ -21,44 +21,44 @@
     </record>
 
     <record id="action_report_saleorder_custom" model="ir.actions.report">
-    <field name="name">🛍 Sale/Quotation</field>
-    <field name="model">sale.order</field>
-    <field name="report_type">qweb-html</field>
-    <field name="report_name">report_branding_custom.report_saleorder_custom</field>
-    <field name="report_file">report_branding_custom.report_saleorder_custom</field>
-    <field name="binding_model_id" ref="sale.model_sale_order"/>
-    <field name="binding_type">report</field>
-    <field name="print_report_name">'Sale/Quotation - %s' % (object.name)</field>
+        <field name="name">🛍 Sale/Quotation</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">report_branding_custom.report_saleorder_custom</field>
+        <field name="report_file">report_branding_custom.report_saleorder_custom</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">'Sale/Quotation - %s' % (object.name)</field>
 
-    <!-- 👇 Your custom group -->
-    <field name="groups_id" eval="[(4, ref('report_branding_custom.group_sale_custom_report'))]"/>
-</record>
+        <!-- 👇 Your custom group -->
+        <field name="groups_id" eval="[(4, ref('report_branding_custom.group_sale_custom_report'))]"/>
+    </record>
 
 
-<record id="action_report_saleorder_confirm_order" model="ir.actions.report">
-    <field name="name">🛍 Sale Order Report</field>
-    <field name="model">sale.order</field>
-    <field name="report_type">qweb-html</field>
-    <field name="report_name">report_branding_custom.report_saleorder_confirm_oder</field>
-    <field name="report_file">report_branding_custom.report_saleorder_confirm_oder</field>
-    <field name="binding_model_id" ref="sale.model_sale_order"/>
-    <field name="binding_type">report</field>
-    <field name="print_report_name">'Sale Order - %s' % (object.name)</field>
+    <record id="action_report_saleorder_confirm_order" model="ir.actions.report">
+        <field name="name">🛍 Sale Order Report</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">report_branding_custom.report_saleorder_confirm_oder</field>
+        <field name="report_file">report_branding_custom.report_saleorder_confirm_oder</field>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">'Sale Order - %s' % (object.name)</field>
 
-    <!-- 👇 Same group -->
-    <field name="groups_id" eval="[(4, ref('report_branding_custom.group_sale_custom_report'))]"/>
-</record>
+        <!-- 👇 Same group -->
+        <field name="groups_id" eval="[(4, ref('report_branding_custom.group_sale_custom_report'))]"/>
+    </record>
 
-<!--    <record id="action_report_invoice_not_confirm" model="ir.actions.report">-->
-<!--    <field name="name">🖨 Invoice Report</field>-->
-<!--    <field name="model">account.move</field>-->
-<!--    <field name="report_type">qweb-pdf</field>-->
-<!--    <field name="report_name">sale_reports.report_invoice_custom</field>-->
-<!--    <field name="report_file">sale_reports.report_invoice_custom</field>-->
-<!--    <field name="paperformat_id" ref="sale_reports.paperformat_saleorder_custom"/> &lt;!&ndash; optional: custom paperformat &ndash;&gt;-->
-<!--    <field name="binding_model_id" ref="account.model_account_move"/>-->
-<!--    <field name="binding_type">report</field>-->
-<!--</record>-->
+    <!--    <record id="action_report_invoice_not_confirm" model="ir.actions.report">-->
+    <!--    <field name="name">🖨 Invoice Report</field>-->
+    <!--    <field name="model">account.move</field>-->
+    <!--    <field name="report_type">qweb-pdf</field>-->
+    <!--    <field name="report_name">sale_reports.report_invoice_custom</field>-->
+    <!--    <field name="report_file">sale_reports.report_invoice_custom</field>-->
+    <!--    <field name="paperformat_id" ref="sale_reports.paperformat_saleorder_custom"/> &lt;!&ndash; optional: custom paperformat &ndash;&gt;-->
+    <!--    <field name="binding_model_id" ref="account.model_account_move"/>-->
+    <!--    <field name="binding_type">report</field>-->
+    <!--</record>-->
 
     <record id="paperformat_invoice_custom" model="report.paperformat">
         <field name="name">Invoice Custom A4</field>
@@ -74,12 +74,12 @@
 
     <record id="account.account_invoices" model="ir.actions.report">
         <field name="paperformat_id" ref="report_branding_custom.paperformat_invoice_custom"/>
-<!--        <field name="groups_id" eval="[(4, ref('sale_reports.group_invoice_custom_report'))]"/>-->
+        <!--        <field name="groups_id" eval="[(4, ref('sale_reports.group_invoice_custom_report'))]"/>-->
     </record>
 
-<!--    <record id="sale.action_report_saleorder" model="ir.actions.report">-->
-<!--        <field name="paperformat_id" ref="sale_reports.paperformat_saleorder_custom"/>-->
-<!--    </record>-->
+    <!--    <record id="sale.action_report_saleorder" model="ir.actions.report">-->
+    <!--        <field name="paperformat_id" ref="sale_reports.paperformat_saleorder_custom"/>-->
+    <!--    </record>-->
 
 
 </odoo>

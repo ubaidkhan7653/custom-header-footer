@@ -1,245 +1,258 @@
 <odoo>
 
-<template id="report_payment_receipt_custom"
-          inherit_id="account.report_payment_receipt_document">
+    <template id="report_payment_receipt_custom"
+              inherit_id="account.report_payment_receipt_document">
 
-<xpath expr="//t[@t-call='web.external_layout']" position="replace">
+        <xpath expr="." position="replace">
 
-<t t-call="web.html_container">
-<t t-call="web.basic_layout">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
 
-<t t-foreach="docs" t-as="o">
+                    <t t-foreach="docs" t-as="o">
 
-<!-- HEADER -->
+                        <!-- HEADER -->
 
-<table style="width:100%; margin-bottom:10px;">
-<tr>
+                        <!--<table style="width:100%; margin-bottom:10px;">-->
+                        <!--<tr>-->
 
-<td style="width:70%;">
-<h1 style="margin:0; color:#7b4775;">
-<b t-esc="o.company_id.name"/>
-</h1>
+                        <!--<td style="width:70%;">-->
+                        <!--<h1 style="margin:0; color:#7b4775;">-->
+                        <!--<b t-esc="o.company_id.name"/>-->
+                        <!--</h1>-->
 
-<h3 style="font-size:13px; color:#666;">
-<span t-esc="o.company_id.partner_id.street"/>
-<t t-if="o.company_id.partner_id.city">,
-<span t-esc="o.company_id.partner_id.city"/>
-</t>
-<t t-if="o.company_id.partner_id.country_id">,
-<span t-esc="o.company_id.partner_id.country_id.name"/>
-</t>
+                        <!--<h3 style="font-size:13px; color:#666;">-->
+                        <!--<span t-esc="o.company_id.partner_id.street"/>-->
+                        <!--<t t-if="o.company_id.partner_id.city">,-->
+                        <!--<span t-esc="o.company_id.partner_id.city"/>-->
+                        <!--</t>-->
+                        <!--<t t-if="o.company_id.partner_id.country_id">,-->
+                        <!--<span t-esc="o.company_id.partner_id.country_id.name"/>-->
+                        <!--</t>-->
 
-<br/>
+                        <!--<br/>-->
 
-<t t-if="o.company_id.phone">
-<b>Phone:</b> <span t-esc="o.company_id.phone"/>
-</t>
+                        <!--<t t-if="o.company_id.phone">-->
+                        <!--<b>Phone:</b> <span t-esc="o.company_id.phone"/>-->
+                        <!--</t>-->
 
-<t t-if="o.company_id.email">
-| <b>Email:</b> <span t-esc="o.company_id.email"/>
-</t>
+                        <!--<t t-if="o.company_id.email">-->
+                        <!--| <b>Email:</b> <span t-esc="o.company_id.email"/>-->
+                        <!--</t>-->
 
-</h3>
-</td>
+                        <!--</h3>-->
+                        <!--</td>-->
 
-<td style="width:30%; text-align:right;">
-<img t-if="o.company_id.logo"
-     t-att-src="image_data_uri(o.company_id.logo)"
-     style="max-width:250px; max-height:100px;"/>
-</td>
+                        <!--<td style="width:30%; text-align:right;">-->
+                        <!--<img t-if="o.company_id.logo"-->
+                        <!--     t-att-src="image_data_uri(o.company_id.logo)"-->
+                        <!--     style="max-width:250px; max-height:100px;"/>-->
+                        <!--</td>-->
 
-</tr>
-</table>
+                        <!--</tr>-->
+                        <!--</table>-->
 
-<hr style="border:0; border-bottom:3px solid #4f055c;"/>
+                        <!--<hr style="border:0; border-bottom:3px solid #4f055c;"/>-->
 
 
-<!-- TITLE -->
+                        <!-- TITLE -->
 
-<h2 style="text-align:center; color:#7b4775; margin-top:20px;">
-<b>Payment Receipt</b>
-</h2>
+                        <h2 style="text-align:center; color:#7b4775; margin-top:20px;">
+                            <b>Payment Receipt</b>
+                        </h2>
 
 
-<!-- PAYMENT INFORMATION -->
+                        <!-- PAYMENT INFORMATION -->
 
-<table style="width:100%; border:1px solid #cfcfcf; margin-top:20px;">
+                        <table style="width:100%; border:1px solid #cfcfcf; margin-top:20px;">
 
-<tr>
-<td style="padding:6px;"><b>Receipt Number</b></td>
-<td style="padding:6px;" t-esc="o.name"/>
+                            <tr>
+                                <td style="padding:6px;">
+                                    <b>Receipt Number</b>
+                                </td>
+                                <td style="padding:6px;" t-esc="o.name"/>
 
-<td style="padding:6px;"><b>Payment Date</b></td>
-<td style="padding:6px;" t-esc="o.date"/>
-</tr>
+                                <td style="padding:6px;">
+                                    <b>Payment Date</b>
+                                </td>
+                                <td style="padding:6px;" t-esc="o.date"/>
+                            </tr>
 
-<tr>
-<td style="padding:6px;"><b>Customer</b></td>
-<td style="padding:6px;" t-esc="o.partner_id.name"/>
+                            <tr>
+                                <td style="padding:6px;">
+                                    <b>Customer</b>
+                                </td>
+                                <td style="padding:6px;" t-esc="o.partner_id.name"/>
 
-<td style="padding:6px;"><b>Payment Method</b></td>
-<td style="padding:6px;" t-esc="o.payment_method_line_id.name"/>
-</tr>
+                                <td style="padding:6px;">
+                                    <b>Payment Method</b>
+                                </td>
+                                <td style="padding:6px;" t-esc="o.payment_method_line_id.name"/>
+                            </tr>
 
-<tr>
-<td style="padding:6px;"><b>Journal</b></td>
-<td style="padding:6px;" t-esc="o.journal_id.name"/>
+                            <tr>
+                                <td style="padding:6px;">
+                                    <b>Journal</b>
+                                </td>
+                                <td style="padding:6px;" t-esc="o.journal_id.name"/>
 
-<td style="padding:6px;"><b>Reference</b></td>
-<td style="padding:6px;" t-esc="o.payment_reference"/>
-</tr>
+                                <td style="padding:6px;">
+                                    <b>Memo</b>
+                                </td>
+                                <td style="padding:6px;" t-esc="o.memo"/>
+                            </tr>
 
-</table>
+                        </table>
 
 
-<!-- INVOICE PAYMENT LINES -->
+                        <!-- INVOICE PAYMENT LINES -->
 
-<table style="width:100%; border-collapse:collapse; margin-top:20px; border:1px solid #cfcfcf;">
+                        <table style="width:100%; border-collapse:collapse; margin-top:20px; border:1px solid #cfcfcf;">
 
-<thead style="background:#7b4775; color:white;">
-<tr>
+                            <thead style="background:#7b4775; color:white;">
+                                <tr>
 
-<th style="border:1px solid #cfcfcf;">Invoice</th>
-<th style="border:1px solid #cfcfcf;">Invoice Date</th>
-<th style="border:1px solid #cfcfcf;">Invoice Total</th>
-<th style="border:1px solid #cfcfcf;">Paid Amount</th>
+                                    <th style="border:1px solid #cfcfcf;">Invoice</th>
+                                    <th style="border:1px solid #cfcfcf;">Invoice Date</th>
+                                    <th style="border:1px solid #cfcfcf;">Invoice Total</th>
+                                    <th style="border:1px solid #cfcfcf;">Paid Amount</th>
 
-</tr>
-</thead>
+                                </tr>
+                            </thead>
 
-<tbody>
+                            <tbody>
 
-<t t-foreach="o.reconciled_invoice_ids" t-as="inv">
+                                <t t-foreach="o.reconciled_invoice_ids" t-as="inv">
 
-<tr>
+                                    <tr>
 
-<td style="border:1px solid #cfcfcf; padding:5px;" t-esc="inv.name"/>
+                                        <td style="border:1px solid #cfcfcf; padding:5px;" t-esc="inv.name"/>
 
-<td style="border:1px solid #cfcfcf; padding:5px;" t-esc="inv.invoice_date"/>
+                                        <td style="border:1px solid #cfcfcf; padding:5px;" t-esc="inv.invoice_date"/>
 
-<td style="border:1px solid #cfcfcf; padding:5px; text-align:right;">
-<span t-field="inv.amount_total"
-      t-options="{'widget':'monetary','display_currency':inv.currency_id}"/>
-</td>
+                                        <td style="border:1px solid #cfcfcf; padding:5px; text-align:right;">
+                                            <span t-field="inv.amount_total"
+                                                  t-options="{'widget':'monetary','display_currency':inv.currency_id}"/>
+                                        </td>
 
-<td style="border:1px solid #cfcfcf; padding:5px; text-align:right;">
-<span t-field="o.amount"
-      t-options="{'widget':'monetary','display_currency':o.currency_id}"/>
-</td>
+                                        <td style="border:1px solid #cfcfcf; padding:5px; text-align:right;">
+                                            <span t-field="o.amount"
+                                                  t-options="{'widget':'monetary','display_currency':o.currency_id}"/>
+                                        </td>
 
-</tr>
+                                    </tr>
 
-</t>
+                                </t>
 
-</tbody>
+                            </tbody>
 
-</table>
+                        </table>
 
 
-<!-- TOTAL -->
+                        <!-- TOTAL -->
 
-<table style="width:100%; margin-top:20px;">
+                        <table style="width:100%; margin-top:20px;">
 
-<tr>
+                            <tr>
 
-<td style="width:60%;">
-<b>Amount in Words:</b>
-<br/>
-<span t-esc="o.currency_id.amount_to_text(o.amount)"/> Only
-</td>
+                                <td style="width:60%;">
+                                    <b>Amount in Words:</b>
+                                    <br/>
+                                    <span t-esc="o.currency_id.amount_to_text(o.amount)"/>
+                                    Only
+                                </td>
 
-<td style="width:40%;">
+                                <td style="width:40%;">
 
-<table style="width:100%; border:1px solid #cfcfcf;">
+                                    <table style="width:100%; border:1px solid #cfcfcf;">
 
-<tr>
-<td style="padding:6px; border:1px solid #cfcfcf;">
-<b>Total Paid</b>
-</td>
+                                        <tr>
+                                            <td style="padding:6px; border:1px solid #cfcfcf;">
+                                                <b>Total Paid</b>
+                                            </td>
 
-<td style="padding:6px; text-align:right; border:1px solid #cfcfcf;">
-<span t-field="o.amount"
-      t-options="{'widget':'monetary','display_currency':o.currency_id}"/>
-</td>
+                                            <td style="padding:6px; text-align:right; border:1px solid #cfcfcf;">
+                                                <span t-field="o.amount"
+                                                      t-options="{'widget':'monetary','display_currency':o.currency_id}"/>
+                                            </td>
 
-</tr>
+                                        </tr>
 
-</table>
+                                    </table>
 
-</td>
+                                </td>
 
-</tr>
+                            </tr>
 
-</table>
+                        </table>
 
 
-<!-- SIGNATURES -->
+                        <!-- SIGNATURES -->
 
-<table style="width:100%; margin-top:120px; text-align:center;">
+                        <table style="width:100%; margin-top:120px; text-align:center;">
 
-<tr>
+                            <tr>
 
-<td style="width:50%; padding:30px;">
+                                <td style="width:50%; padding:30px;">
 
-<div style="border-top:3px solid #000; width:70%; margin:auto;"></div>
+                                    <div style="border-top:3px solid #000; width:70%; margin:auto;"></div>
 
-<div style="margin-top:8px; font-weight:bold;">
-Accounts Manager
-</div>
+                                    <div style="margin-top:8px; font-weight:bold;">
+                                        Accounts Manager
+                                    </div>
 
-</td>
+                                </td>
 
-<td style="width:50%; padding:30px;">
+                                <td style="width:50%; padding:30px;">
 
-<div style="border-top:3px solid #000; width:70%; margin:auto;"></div>
+                                    <div style="border-top:3px solid #000; width:70%; margin:auto;"></div>
 
-<div style="margin-top:8px; font-weight:bold;">
-Authorized Signatory
-</div>
+                                    <div style="margin-top:8px; font-weight:bold;">
+                                        Authorized Signatory
+                                    </div>
 
-</td>
+                                </td>
 
-</tr>
+                            </tr>
 
-</table>
+                        </table>
 
 
-<hr style="border:0; border-bottom:3px solid #4f055c; margin-top:20px;"/>
+                        <!--<hr style="border:0; border-bottom:3px solid #4f055c; margin-top:20px;"/>-->
 
 
-<!-- FOOTER -->
+                        <!-- FOOTER -->
 
-<div style="text-align:center; font-size:13px; color:#666;">
+                        <!--<div style="text-align:center; font-size:13px; color:#666;">-->
 
-<b t-esc="o.company_id.name"/>
+                        <!--<b t-esc="o.company_id.name"/>-->
 
-<br/>
+                        <!--<br/>-->
 
-<span t-esc="o.company_id.partner_id.street"/>
+                        <!--<span t-esc="o.company_id.partner_id.street"/>-->
 
-<t t-if="o.company_id.partner_id.city">,
-<span t-esc="o.company_id.partner_id.city"/>
-</t>
+                        <!--<t t-if="o.company_id.partner_id.city">,-->
+                        <!--<span t-esc="o.company_id.partner_id.city"/>-->
+                        <!--</t>-->
 
-<br/>
+                        <!--<br/>-->
 
-<t t-if="o.company_id.phone">
-Phone: <span t-esc="o.company_id.phone"/>
-</t>
+                        <!--<t t-if="o.company_id.phone">-->
+                        <!--Phone: <span t-esc="o.company_id.phone"/>-->
+                        <!--</t>-->
 
-<t t-if="o.company_id.email">
-| Email: <span t-esc="o.company_id.email"/>
-</t>
+                        <!--<t t-if="o.company_id.email">-->
+                        <!--| Email: <span t-esc="o.company_id.email"/>-->
+                        <!--</t>-->
 
-</div>
+                        <!--</div>-->
 
-</t>
+                    </t>
 
-</t>
-</t>
+                </t>
+            </t>
 
-</xpath>
+        </xpath>
 
-</template>
+    </template>
 
 </odoo>

@@ -16,19 +16,18 @@ It includes:
     "author": "Ubaid Ur Rehman || Leader's Corporate",
     "developer": "Ubaid Ur Rehman || Leader's Corporate",
     "category": "Sales",
-    'depends': ['sale','sale_management', 'account', 'accountant'],
+    'depends': ['sale', 'sale_management', 'account', 'accountant'],
     'license': 'LGPL-3',
     'data': [
         'reports/header-footer/custom_header_footer.xml',
         'reports/sale_report_template.xml',
         'reports/sale_order_confirm.xml',
-        #
+
         # 'reports/invoice_report.xml',
-        # 'reports/account_payment_report.xml',
+        'reports/account_payment_report.xml',
         # 'reports/invoice_report_without_payment.xml',
 
-
-        # 'views/report_action.xml',
+        'views/report_action.xml',
         'views/order_views.xml',
     ],
     'images': ['static/description/icon.png'],
