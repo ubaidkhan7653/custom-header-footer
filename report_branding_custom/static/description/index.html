@@ -1,112 +1,162 @@
 <head>
   <style>
       .backgrounds{background-color:#fff; color:#1f4e79}
+      .custom-bg{
+          background:#1e3a8a;
+            background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);
+            border-radius:20px;
+            padding:45px 35px;
+            color:#fff;
+            overflow:hidden;
+            box-shadow:0 12px 35px rgba(0,0,0,.18);
+      }
+      .custom-badge{
+           display:inline-block;
+                background:rgba(255,255,255,.15);
+                padding:8px 18px;
+                border-radius:30px;
+                font-size:13px;
+                font-weight:600;
+                margin-bottom:20px;
+      }
+      .custom-title{
+           font-size:38px;
+                font-weight:800;
+                margin-bottom:15px;
+                color:#fff;
+                line-height:1.2;
+      }
+      .custom-discription-title{
+           font-size:16px;
+                color:#e5e7eb;
+                line-height:1.8;
+                max-width:700px;
+      }
+      .small-badge{
+          background:#10b981;padding:6px 12px;border-radius:20px;margin:4px;display:inline-block;
+             }
   </style>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
 
-        <div class="hero-section">
+        <div class="custom-bg">
 
-            <div class="hero-badge">
+            <!-- TOP BADGE -->
+            <div class="custom-badge">
                 ⭐ Professional Odoo Report Customization
             </div>
 
-            <h1 class="hero-title">
+            <!-- TITLE -->
+            <h1 class="custom-title">
                 Custom Report <br>
-                <span>Header & Footer</span>
+                <span style="color:#e0e7ff;">Header & Footer</span>
             </h1>
 
-            <p class="hero-text">
+            <!-- TEXT -->
+            <p class="custom-discription-title">
                 Replace the default Odoo report header and footer with a modern,
                 fully branded layout for invoices, quotations and reports.
             </p>
 
-            <div class="hero-tags">
-
-                <span class="tag green">
-                    Community
-                </span>
-
-                <span class="tag blue">
-                    Enterprise
-                </span>
-
-                <span class="tag indigo">
-                    Odoo.sh
-                </span>
-
-                <span class="tag orange">
-                    On-Premise
-                </span>
-
+            <!-- BADGES -->
+            <div style="margin-top:20px;">
+                <span class="small-badge">Community</span>
+                <span class="small-badge">Enterprise</span>
+                <span class="small-badge">Odoo.sh</span>
+                <span class="small-badge">On-Premise</span>
             </div>
 
         </div>
-
     </div>
 </section>
 
-
-
 <section class="oe_container">
-
     <div class="oe_row oe_spaced">
 
-        <div class="section-header">
+        <!-- Section Header -->
+        <div class="oe_span12 text-center" style="margin-bottom:45px;">
 
-            <span class="section-badge">
+            <span style="
+                display:inline-block;
+                background:#EEF4FF;
+                color:#2563EB;
+                padding:8px 18px;
+                border-radius:30px;
+                font-size:13px;
+                font-weight:600;
+                margin-bottom:15px;
+            ">
                 WHY CHOOSE THIS MODULE
             </span>
 
-            <h2 class="section-title">
+            <h2 style="
+                font-size:34px;
+                font-weight:700;
+                color:#1F2937;
+                margin-bottom:15px;
+            ">
                 Professional Report Branding for Odoo
             </h2>
 
-            <p class="section-description">
-
-                Give your invoices, quotations, purchase orders,
-                and all PDF reports a professional appearance
-                with a fully customized header and footer
+            <p style="
+                max-width:850px;
+                margin:auto;
+                font-size:16px;
+                color:#6B7280;
+                line-height:1.8;
+            ">
+                Give your invoices, quotations, purchase orders, and all PDF reports
+                a professional appearance with a fully customized header and footer
                 that reflects your company's brand identity.
-
             </p>
 
         </div>
 
+
+        <!-- Overview -->
 
 
         <div class="row">
 
             <div class="col-md-6">
 
-                <div class="overview-card">
+                <div style="
+                    background:#fff;
+                    border-radius:16px;
+                    border:1px solid #E5E7EB;
+                    padding:30px;
+                    box-shadow:0 8px 25px rgba(0,0,0,.05);
+                    height:100%;
+                ">
 
-                    <h3 class="card-title">
-
+                    <h3 style="
+                        color:#1E3A8A;
+                        font-weight:700;
+                        margin-bottom:20px;
+                    ">
                         <i class="fa fa-lightbulb-o"></i>
-
                         Overview
-
                     </h3>
 
-                    <p>
-
-                        Replace the default Odoo report header and footer
-                        with a clean, elegant and professionally designed layout.
-
+                    <p style="
+                        color:#555;
+                        line-height:1.9;
+                        font-size:15px;
+                    ">
+                        Replace the default Odoo report header and footer with a
+                        clean, elegant, and professionally designed layout.
                     </p>
 
-                    <p>
-
-                        Display your company logo,
-                        address,
-                        contact information,
-                        branding colors,
-                        and footer details consistently across every generated PDF report.
-
+                    <p style="
+                        color:#555;
+                        line-height:1.9;
+                        font-size:15px;
+                    ">
+                        Display your company logo, address, contact information,
+                        branding colors, and footer details consistently across
+                        every generated PDF report.
                     </p>
 
                 </div>
@@ -114,34 +164,40 @@
             </div>
 
 
-
             <div class="col-md-6">
 
-                <div class="benefit-card">
+                <div style="
+                    background:#2563EB;
+                    color:#fff;
+                    border-radius:16px;
+                    padding:30px;
+                    height:100%;
+                    box-shadow:0 10px 30px rgba(37,99,235,.25);
+                ">
 
-                    <h3>
-
+                    <h3 style="
+                        font-weight:700;
+                        margin-bottom:20px;
+                    ">
                         <i class="fa fa-star"></i>
-
                         Benefits
-
                     </h3>
 
-                    <ul class="benefit-list">
+                    <div style="line-height:2.2;font-size:15px;">
 
-                        <li>Professional PDF Reports</li>
+                        ✓ Professional PDF Reports<br>
 
-                        <li>Improve Company Branding</li>
+                        ✓ Improve Company Branding<br>
 
-                        <li>Better Customer Impression</li>
+                        ✓ Better Customer Impression<br>
 
-                        <li>Clean & Modern Layout</li>
+                        ✓ Clean & Modern Layout<br>
 
-                        <li>Easy Installation</li>
+                        ✓ Easy Installation<br>
 
-                        <li>No Technical Configuration</li>
+                        ✓ No Technical Configuration
 
-                    </ul>
+                    </div>
 
                 </div>
 
@@ -150,40 +206,55 @@
         </div>
 
 
+        <!-- Features -->
 
-        <div class="feature-section">
+        <div style="margin-top:55px;">
 
-            <h2 class="feature-heading">
-
+            <h2 class="text-center" style="
+                font-size:30px;
+                font-weight:700;
+                color:#1F2937;
+                margin-bottom:35px;
+            ">
                 Key Features
-
             </h2>
-
-
 
             <div class="row">
 
+                <!-- Card -->
+
                 <div class="col-md-4">
 
-                    <div class="feature-card">
+                    <div style="
+                        background:#fff;
+                        border-radius:16px;
+                        padding:30px;
+                        text-align:center;
+                        border:1px solid #E5E7EB;
+                        box-shadow:0 8px 20px rgba(0,0,0,.05);
+                        height:100%;
+                    ">
 
-                        <div class="icon-circle icon-blue">
-
+                        <div style="
+                            width:70px;
+                            height:70px;
+                            margin:auto;
+                            border-radius:50%;
+                            background:#EEF4FF;
+                            color:#2563EB;
+                            line-height:70px;
+                            font-size:28px;
+                            margin-bottom:20px;
+                        ">
                             <i class="fa fa-paint-brush"></i>
-
                         </div>
 
-                        <h4>
-
+                        <h4 style="font-weight:700;">
                             Modern Design
-
                         </h4>
 
-                        <p>
-
-                            Elegant layouts with a clean
-                            and professional appearance.
-
+                        <p style="color:#666;line-height:1.8;">
+                            Elegant layouts with a clean and professional appearance.
                         </p>
 
                     </div>
@@ -194,27 +265,36 @@
 
                 <div class="col-md-4">
 
-                    <div class="feature-card">
+                    <div style="
+                        background:#fff;
+                        border-radius:16px;
+                        padding:30px;
+                        text-align:center;
+                        border:1px solid #E5E7EB;
+                        box-shadow:0 8px 20px rgba(0,0,0,.05);
+                        height:100%;
+                    ">
 
-                        <div class="icon-circle icon-green">
-
+                        <div style="
+                            width:70px;
+                            height:70px;
+                            margin:auto;
+                            border-radius:50%;
+                            background:#ECFDF5;
+                            color:#10B981;
+                            line-height:70px;
+                            font-size:28px;
+                            margin-bottom:20px;
+                        ">
                             <i class="fa fa-building"></i>
-
                         </div>
 
-                        <h4>
-
+                        <h4 style="font-weight:700;">
                             Company Branding
-
                         </h4>
 
-                        <p>
-
-                            Display your logo,
-                            address,
-                            and corporate identity
-                            on every report.
-
+                        <p style="color:#666;line-height:1.8;">
+                            Display your logo, address, and corporate identity on every report.
                         </p>
 
                     </div>
@@ -225,28 +305,37 @@
 
                 <div class="col-md-4">
 
-                    <div class="feature-card">
+                    <div style="
+                        background:#fff;
+                        border-radius:16px;
+                        padding:30px;
+                        text-align:center;
+                        border:1px solid #E5E7EB;
+                        box-shadow:0 8px 20px rgba(0,0,0,.05);
+                        height:100%;
+                    ">
 
-                        <div class="icon-circle icon-orange">
-
+                        <div style="
+                            width:70px;
+                            height:70px;
+                            margin:auto;
+                            border-radius:50%;
+                            background:#FFF7ED;
+                            color:#F97316;
+                            line-height:70px;
+                            font-size:28px;
+                            margin-bottom:20px;
+                        ">
                             <i class="fa fa-file-text-o"></i>
-
                         </div>
 
-                        <h4>
-
+                        <h4 style="font-weight:700;">
                             All Standard Reports
-
                         </h4>
 
-                        <p>
-
-                            Compatible with invoices,
-                            quotations,
-                            sale orders,
-                            purchase orders
-                            and other standard Odoo reports.
-
+                        <p style="color:#666;line-height:1.8;">
+                            Compatible with invoices, quotations, sale orders,
+                            purchase orders and other standard Odoo reports.
                         </p>
 
                     </div>
@@ -258,7 +347,6 @@
         </div>
 
     </div>
-
 </section>
 
 
