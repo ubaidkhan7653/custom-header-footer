@@ -1,0 +1,217 @@
+body{
+    background:#ffffff;
+    color:#333;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ===============================
+   Hero Section
+================================ */
+
+.hero-section{
+    background:linear-gradient(135deg,#2563eb 0%,#1e3a8a 100%);
+    border-radius:20px;
+    padding:45px 35px;
+    color:#fff;
+    overflow:hidden;
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+}
+
+.top-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.15);
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero-title{
+    font-size:38px;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:15px;
+    color:#fff;
+}
+
+.hero-title span{
+    color:#e0e7ff;
+}
+
+.hero-description{
+    max-width:700px;
+    font-size:16px;
+    color:#e5e7eb;
+    line-height:1.8;
+}
+
+.badge-list{
+    margin-top:20px;
+}
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    margin:4px;
+    border-radius:20px;
+    color:#fff;
+    font-size:14px;
+}
+
+.green{
+    background:#10b981;
+}
+
+.blue{
+    background:#3b82f6;
+}
+
+.indigo{
+    background:#6366f1;
+}
+
+.orange{
+    background:#f97316;
+}
+
+/* ===============================
+   Cards
+================================ */
+
+.feature-card{
+    background:#fff;
+    border:1px solid #E5E7EB;
+    border-radius:16px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    height:100%;
+}
+
+.info-card{
+    background:#fff;
+    border-radius:16px;
+    border:1px solid #E5E7EB;
+    padding:30px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    height:100%;
+}
+
+.blue-card{
+    background:#2563EB;
+    color:#fff;
+    border-radius:16px;
+    padding:30px;
+    height:100%;
+    box-shadow:0 10px 30px rgba(37,99,235,.25);
+}
+
+/* ===============================
+   Icons
+================================ */
+
+.icon-circle{
+    width:70px;
+    height:70px;
+    margin:auto;
+    margin-bottom:20px;
+    border-radius:50%;
+    line-height:70px;
+    font-size:28px;
+}
+
+.icon-blue{
+    background:#EEF4FF;
+    color:#2563EB;
+}
+
+.icon-green{
+    background:#ECFDF5;
+    color:#10B981;
+}
+
+.icon-orange{
+    background:#FFF7ED;
+    color:#F97316;
+}
+
+/* ===============================
+   Developer
+================================ */
+
+.developer-section{
+    background:linear-gradient(135deg,#1E3A8A,#2563EB);
+    color:#fff;
+    border-radius:20px;
+    padding:50px 40px;
+    text-align:center;
+    box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
+
+.developer-logo{
+    width:180px;
+    margin-bottom:25px;
+}
+
+.developer-description{
+    color:#E5E7EB;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* ===============================
+   Installation Cards
+================================ */
+
+.install-card{
+    padding:30px;
+    background:#fff;
+    border-radius:16px;
+    border:1px solid #E5E7EB;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+    text-align:center;
+}
+
+/* ===============================
+   Preview
+================================ */
+
+.preview-box{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid #E5E7EB;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.preview-box img{
+    width:100%;
+    display:block;
+}
+
+.preview-title{
+    background:#F8FAFC;
+    padding:18px;
+    text-align:center;
+    font-size:18px;
+    font-weight:700;
+}
+
+/* ===============================
+   Support
+================================ */
+
+.support-box{
+    background:linear-gradient(135deg,#2563EB,#1E3A8A);
+    color:#fff;
+    border-radius:18px;
+    padding:40px;
+    box-shadow:0 12px 35px rgba(37,99,235,.25);
+}
+
+.support-box p{
+    color:#E5E7EB;
+    line-height:1.9;
+}

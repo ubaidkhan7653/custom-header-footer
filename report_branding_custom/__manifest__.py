@@ -31,7 +31,7 @@ Features:
     'assets': {
         'web.report_assets_common': [
             # Add custom CSS if required
-            # 'your_module/static/src/css/report_style.css',
+            'report_branding_custom/static/css/style.css',
         ],
     },
 
