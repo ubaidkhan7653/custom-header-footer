@@ -29,9 +29,8 @@ Features:
     ],
 
     'assets': {
-        'web.report_assets_common': [
-            # Add custom CSS if required
-            'report_branding_custom/static/css/style.css',
+        'web.assets_backend': [
+            'report_branding_custom/static/src/css/style.css',
         ],
     },
 
