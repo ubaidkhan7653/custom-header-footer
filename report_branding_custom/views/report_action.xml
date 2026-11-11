@@ -1,4 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <!-- SALE ORDER PAPER FORMAT -->
     <record id="paperformat_saleorder_custom" model="report.paperformat">
         <field name="name">Sale Order Custom A4</field>
         <field name="format">A4</field>
@@ -8,10 +11,11 @@
         <field name="margin_left">10</field>
         <field name="margin_right">10</field>
         <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
     </record>
 
-
-
+    <!-- INVOICE PAPER FORMAT -->
     <record id="paperformat_invoice_custom" model="report.paperformat">
         <field name="name">Invoice Custom A4</field>
         <field name="format">A4</field>
@@ -21,10 +25,22 @@
         <field name="margin_left">10</field>
         <field name="margin_right">10</field>
         <field name="header_line" eval="False"/>
+        <field name="header_spacing">35</field>
+        <field name="dpi">90</field>
     </record>
 
 
+    <!-- ASSIGN PAPER FORMAT TO SALE ORDER -->
+    <record id="sale.action_report_saleorder" model="ir.actions.report">
+        <field name="paperformat_id"
+               ref="report_branding_custom.paperformat_saleorder_custom"/>
+    </record>
+
+
+    <!-- ASSIGN PAPER FORMAT TO INVOICE -->
     <record id="account.account_invoices" model="ir.actions.report">
-        <field name="paperformat_id" ref="report_branding_custom.paperformat_invoice_custom"/>
+        <field name="paperformat_id"
+               ref="report_branding_custom.paperformat_invoice_custom"/>
     </record>
+
 </odoo>

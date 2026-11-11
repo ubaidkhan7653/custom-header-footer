@@ -1,108 +1,101 @@
 <odoo>
-    <template id="custom_layout_standard"
-              inherit_id="web.external_layout_standard">
-
+    <template id="custom_layout_standard" inherit_id="web.external_layout_standard">
         <!-- HEADER -->
         <xpath expr="//div[contains(@t-attf-class, 'header')]" position="replace">
 
-            <t t-set="company_id" t-value="o.company_id or res_company"/>
+            <t t-set="comp" t-value="company or res_company"/>
 
-            <div class="header" style="width:100%;">
+            <div t-attf-class="header o_company_#{comp.id}_layout" style="width:100%;">
 
                 <table style="width:100%; margin-bottom:10px; border:white;">
                     <tr>
                         <td style="width:70%; vertical-align:top;">
-                            <h1 style="margin:0; color:#7b4775;">
-                                <strong><b t-esc="company_id.name"/></strong>
+                            <h1 style="margin:0; color:#7b4775; text-transform: uppercase;">
+                                <b>
+                                    <strong t-out="comp.name"/>
+                                </b>
                             </h1>
 
                             <div style="font-size:16px; color:#30302f;">
-                                <span t-esc="company_id.partner_id.street or ''"/>
-                                <t t-if="company_id.partner_id.city">
-                                    , <span t-esc="company_id.partner_id.city"/>
-                                </t>
-                                <t t-if="company_id.partner_id.state_id">
-                                    , <span t-esc="company_id.partner_id.state_id.name"/>
-                                </t>
-                                <t t-if="company_id.partner_id.country_id">
-                                    , <span t-esc="company_id.partner_id.country_id.name"/>
+                                <span t-out="comp.partner_id.street or ''"/>
+                                <t t-if="comp.partner_id.city">,
+                                    <span t-out="comp.partner_id.city"/>
                                 </t>
                                 <br/>
-                                <t t-if="company_id.phone">
-                                    <b>Phone:</b> <span t-esc="company_id.phone"/>
+                                <t t-if="comp.partner_id.state_id">,
+                                    <span t-out="comp.partner_id.state_id.name"/>
                                 </t>
-                                <t t-if="company_id.email">
-                                    || <b>Email:</b> <span t-esc="company_id.email"/>
+                                <t t-if="comp.partner_id.country_id">,
+                                    <span t-out="comp.partner_id.country_id.name"/>
                                 </t>
-                                <t t-if="company_id.vat">
-                                    || <b>Tax ID:</b> <span t-esc="company_id.vat"/>
+                                <br/>
+                                <t t-if="comp.phone">
+                                    <b>Phone:</b>
+                                    <span t-out="comp.phone"/>
+                                </t>
+                                <t t-if="comp.email">||
+                                    <b>Email:</b>
+                                    <span t-out="comp.email"/>
+                                </t>
+                                <t t-if="comp.vat">||
+                                    <b>Tax ID:</b>
+                                    <span t-out="comp.vat"/>
                                 </t>
                             </div>
                         </td>
 
                         <td style="width:30%; text-align:right; vertical-align:top;">
-                           <img t-if="o.company_id.logo"
-                                     t-att-src="image_data_uri(o.company_id.logo)"
-                                     style="max-width:250px; max-height:120px;"/>
+                            <img t-if="comp.logo"
+                                 t-att-src="image_data_uri(comp.logo)"
+                                 style="max-width:250px; max-height:120px;"/>
                         </td>
                     </tr>
                 </table>
 
                 <div style="width:100%; border-bottom:3px solid #7b4775; margin-bottom:5px;"/>
-
             </div>
         </xpath>
 
         <!-- FOOTER -->
         <xpath expr="//div[contains(@t-attf-class, 'footer')]" position="replace">
 
-            <t t-set="company_id" t-value="o.company_id or res_company"/>
+            <t t-set="comp" t-value="company or res_company"/>
 
-            <div class="footer">
+            <div t-attf-class="footer o_company_#{comp.id}_layout">
 
                 <div style="border-top:3px solid #7b4775; margin-bottom:10px;"/>
 
                 <div style="width:100%; text-align:center; color:#30302f;">
-
                     <div style="color:#7b4775; font-size:25px;">
-                        <strong><b t-esc="company_id.name"/></strong>
+                        <strong t-out="comp.name"/>
                     </div>
 
                     <div style="font-size:16px;">
-                        <span t-esc="company_id.partner_id.street or ''"/>
-
-                        <t t-if="company_id.partner_id.city">,
-                            <span t-esc="company_id.partner_id.city"/>
+                        <span t-out="comp.partner_id.street or ''"/>
+                        <t t-if="comp.partner_id.city">,
+                            <span t-out="comp.partner_id.city"/>
                         </t>
-
-                        <t t-if="company_id.partner_id.state_id">,
-                            <span t-esc="company_id.partner_id.state_id.name"/>
+                        <t t-if="comp.partner_id.state_id">,
+                            <span t-out="comp.partner_id.state_id.name"/>
                         </t>
-
-                        <t t-if="company_id.partner_id.country_id">,
-                            <span t-esc="company_id.partner_id.country_id.name"/>
+                        <t t-if="comp.partner_id.country_id">,
+                            <span t-out="comp.partner_id.country_id.name"/>
                         </t>
-
                         <br/>
-
-                        <t t-if="company_id.phone">
+                        <t t-if="comp.phone">
                             <b>Phone:</b>
-                            <span t-esc="company_id.phone"/>
+                            <span t-out="comp.phone"/>
                         </t>
-
-                        <t t-if="company_id.email">
-                            || <b>Email:</b>
-                            <span t-esc="company_id.email"/>
+                        <t t-if="comp.email">||
+                            <b>Email:</b>
+                            <span t-out="comp.email"/>
                         </t>
-
-                        <t t-if="company_id.vat">
-                            || <b>Tax ID:</b>
-                            <span t-esc="company_id.vat"/>
+                        <t t-if="comp.vat">||
+                            <b>Tax ID:</b>
+                            <span t-out="comp.vat"/>
                         </t>
                     </div>
-
                 </div>
-
             </div>
         </xpath>
 
